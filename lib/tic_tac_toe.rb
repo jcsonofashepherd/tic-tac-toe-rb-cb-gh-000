@@ -90,6 +90,6 @@ def play(board)
   until over?(board)
     turn(board)
   end
-  if won?(board) {puts "Congratulations #{winner(board)}!"}
-  if draw?(board) {puts "Cat's Game!"}
+  won?(board) ? puts "Congratulations #{winner(board)}!" : nil
+  draw?(board) ? puts "Cat's Game!" : nil
 end
