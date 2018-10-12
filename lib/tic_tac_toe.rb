@@ -59,10 +59,6 @@ def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
 
-def play(board)
-  until turn_count(board) == 9 {turn(board)}
-end
-
 def won?(board)
   WIN_COMBINATIONS.each do |combo|
     curr_combo = []
@@ -88,4 +84,8 @@ end
 
 def winner(board)
   won?(board) ? board[won?(board)[0]] : nil
+end
+
+def play(board)
+  until over?(board) do turn(board) end  
 end
